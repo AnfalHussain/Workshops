@@ -1,0 +1,1 @@
+export { setWorkshops } from "./workshops";
