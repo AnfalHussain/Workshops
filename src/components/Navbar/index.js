@@ -9,7 +9,11 @@ const NavBar = (props) => {
   return (
     <nav className="navbar navbar-expand-lg fixed-top nav">
       <Link className="navbar-brand" to="/">
-        <img src={icon} style={{ height: "60px", paddingLeft: "20px" }}></img>
+        <img
+          src={icon}
+          alt="light in logo"
+          style={{ height: "60px", paddingLeft: "20px" }}
+        ></img>
       </Link>
       <button
         className="navbar-toggler navbar-toggler-right"
