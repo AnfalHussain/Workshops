@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,300;1,900&display=swap");
 
+.header_bg {
+  background-image: url("../img/bg-1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bg-white {
+  background-color: #fff;
+}
+#nav-link {
+  font-family: "Poppins", sans-serif;
+  color: #2e1753 !important;
+  font-size: 16px;
+}
 .workshop_item {
   border: 1px solid #f4f4f9;
   border-radius: 20px;
@@ -52,4 +65,32 @@
   color: #fff !important;
   background-color: #c5198c !important;
   /* border: solid 5px #2e1753 !important; */
+}
+
+.signup_btn {
+  display: inline-block;
+  padding: 14px 40px;
+  border-radius: 45px !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  font-family: "Poppins", sans-serif;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  background-color: #c5198c !important;
+  color: #fff !important;
+}
+
+.signup_btn:hover,
+.signup_btn:active:focus {
+  color: #fff !important;
+  background-color: #2e1753 !important;
+  /* border: solid 5px #2e1753 !important; */
+}
+.form-control {
+  border-radius: 45px !important;
+}
+
+.card-footer {
+  background-color: #fff !important;
 }

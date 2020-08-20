@@ -7,16 +7,15 @@ import AuthButton from "./AuthButton";
 import CartBtn from "./CartButton";
 
 //Logo
-import icon from "../../assets/logo/lightIn.png";
+import icon from "../../assets/logo/lightLogo4.png";
 
 const NavBar = (props) => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light nav justify-content-between d-flex">
-      <div class="container">
-        <div className="pr-5 mr-5">
-          <Link className="navbar-brand pr-5 mr-5" to="/">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-white nav justify-content-between d-flex">
+      <div className="container">
+        <div>
+          <Link className="navbar-brand " to="/">
             <img
-              className="pr-5 mr-5"
               src={icon}
               alt="light in logo"
               style={{ height: "60px", paddingLeft: "20px" }}
@@ -24,11 +23,10 @@ const NavBar = (props) => {
           </Link>
         </div>
 
-        {!!props.user && (
-          <div className="collapse navbar-collapse" id="navbarResponsive"></div>
-        )}
-        <AuthButton className="pl-5" />
-        <CartBtn className="pl-5" />
+        <div className="collapse navbar-collapse" id="navbarText">
+          <AuthButton />
+          <CartBtn />
+        </div>
       </div>
     </nav>
   );

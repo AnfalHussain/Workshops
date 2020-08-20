@@ -17,10 +17,7 @@ class CartButton extends Component {
             count={workshops !== 0 && workshops}
             effect={Effect.SCALE}
           />
-          <FaShoppingCart
-            style={{ color: "#2e1753", marginRight: 12 }}
-            size={30}
-          />
+          <FaShoppingCart style={{ color: "#2e1753" }} size={30} />
         </Link>
       </li>
     );

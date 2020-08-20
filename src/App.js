@@ -7,21 +7,26 @@ import "./App.css";
 
 //Components
 import List from "./components/WorkshopsList";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Profile from "./components/Profile";
 import Navbar from "./components/Navbar";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App-header">
-        <Navbar />
-        <Switch>
-          <Route path="/" component={List} />
-        </Switch>
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="App-header">
+      <Navbar />
+      <Switch>
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/profile" component={Profile} />
+        <Route exact path="/" component={List} />
+        <Redirect to="/" />
+      </Switch>
+    </div>
+  );
+};
 
 // export default App;
 // export default withRouter(connect(null, mapDispatchToProps)(App));
-export default withRouter(App);
+export default App;
