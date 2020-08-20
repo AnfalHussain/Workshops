@@ -5,7 +5,7 @@ import { RiAddCircleFill } from "react-icons/ri";
 
 const WorkshopCard = ({ name, description, image, price }) => {
   return (
-    <div className="container row jumbotron-fluid  align-items-center pb-5 workshop_item">
+    <div className=" row  align-items-center pb-5 workshop_item">
       <div className="col-md-6 col-xs-12 text-center">
         <img src={image} alt="workshop" height={300} />
       </div>{" "}

@@ -1,44 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 
 // Components
-// import AuthButton from "./AuthButton";
-import icon from "../../assets/logo/logo.png";
+import AuthButton from "./AuthButton";
+import CartBtn from "./CartButton";
+
+//Logo
+import icon from "../../assets/logo/lightIn.png";
+
 const NavBar = (props) => {
   return (
-    <nav className="navbar navbar-expand-lg fixed-top nav">
-      <Link className="navbar-brand" to="/">
-        <img
-          src={icon}
-          alt="light in logo"
-          style={{ height: "60px", paddingLeft: "20px" }}
-        ></img>
-      </Link>
-      <button
-        className="navbar-toggler navbar-toggler-right"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarResponsive"
-        aria-controls="navbarResponsive"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon" />
-      </button>
-
-      {/* {!!props.user && (
-        <div className="collapse navbar-collapse" id="navbarResponsive">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light nav justify-content-between d-flex">
+      <div class="container">
+        <div className="pr-5 mr-5">
+          <Link className="navbar-brand pr-5 mr-5" to="/">
+            <img
+              className="pr-5 mr-5"
+              src={icon}
+              alt="light in logo"
+              style={{ height: "60px", paddingLeft: "20px" }}
+            ></img>
+          </Link>
         </div>
-      )} */}
-      {/* <AuthButton /> */}
+
+        {!!props.user && (
+          <div className="collapse navbar-collapse" id="navbarResponsive"></div>
+        )}
+        <AuthButton className="pl-5" />
+        <CartBtn className="pl-5" />
+      </div>
     </nav>
   );
 };
 
-// const mapStateToProps = state => ({
-//   user: state.user
-// });
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
 
-// export default connect(mapStateToProps)(NavBar);
-export default NavBar;
+export default connect(mapStateToProps)(NavBar);
+// export default NavBar;
