@@ -23,8 +23,10 @@ const AuthButton = ({ user, profile }) => {
       <>
         <li id="nav-link" key="profileButton" className="nav-item">
           <Link id="nav-link" to="/profile" className="nav-link nav">
-            <RiAccountCircleFill size={30} /> {user.username}'s Profile
+            <RiAccountCircleFill size={30} /> Profile
           </Link>
+        </li>
+        <li id="nav-link" key="profileButton" className="nav-item">
           <Logout />
         </li>
       </>

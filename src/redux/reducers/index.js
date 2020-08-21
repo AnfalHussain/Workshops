@@ -3,13 +3,13 @@ import { combineReducers } from "redux";
 import authReducer from "./authentication";
 import workshops from "./workshops";
 import errorReducer from "./errors";
-// import cartReducer from "./cart";
+import cartReducer from "./cart";
 
 const rootReducer = combineReducers({
   authReducer: authReducer,
   workshops,
   errors: errorReducer,
-  // cartReducer: cartReducer,
+  cartReducer: cartReducer,
 });
 
 export default rootReducer;
