@@ -26,7 +26,7 @@ const AuthButton = ({ user, profile }) => {
             <RiAccountCircleFill size={30} /> Profile
           </Link>
         </li>
-        <li id="nav-link" key="profileButton" className="nav-item">
+        <li id="nav-link" key="Logout" className="nav-item">
           <Logout />
         </li>
       </>

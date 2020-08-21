@@ -11,10 +11,13 @@ export const removeItem = (item) => ({
   payload: item,
 });
 
-export const checkout = (workshops) => async (dispatch) => {
+export const checkout = (workshops, history) => async (dispatch) => {
   try {
     const res = await instance.post("register/", workshops);
     dispatch({ type: CHECKOUT, payload: res.data });
+    if (history) {
+      history.replace("/successful");
+    }
   } catch (error) {
     console.error(error);
   }

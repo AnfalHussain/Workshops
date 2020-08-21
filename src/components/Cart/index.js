@@ -7,7 +7,7 @@ class ShoppingCart extends Component {
   totalPrice = () => {
     let total = 0;
     this.props.workshops.forEach((item) => {
-      total = total + parseFloat(item.price) * parseFloat(item.quantity);
+      total = total + parseFloat(item.price);
     });
     return total.toFixed(3);
   };
@@ -18,59 +18,41 @@ class ShoppingCart extends Component {
 
     return (
       <>
-        <div className="container mt-5">
-          <div id="loginCard" className="card col-8 mx-auto  mt-5">
+        <div className="container mt-5 mb-5">
+          <div id="loginCard" className="card col-8 mx-auto mt-5 ">
             <div className="card-body">
               <div className="text-center">
                 <h1 className="mt-5">My Cart</h1>
               </div>
 
-              <div className="container-fluid mb-4">
+              <div className="container-fluid mb-4 mt-4 pl-4 pr-4  ">
                 {getOrderItem.length ? (
-                  <div className="row">
+                  <div className="row m-4">
                     <div className="col-4">
-                      <strong> Product</strong>
+                      <strong>Workshop</strong>
                     </div>
                     <div className="col-4">
                       {" "}
-                      <strong>Price </strong>
+                      <strong>Price</strong>
                     </div>
                     <div className="col-12">
                       <div className="table-responsive">
-                        <table className="table table-striped">
-                          {/* <thead>
-                          <tr>
-                            <th scope="col"> </th>
-                            <th scope="col">Product</th>
+                        {getOrderItem}
 
-                            <th scope="col" className="text-right">
-                              Price
-                            </th>
-                            <th> </th>
-                          </tr>
-                        </thead>
-                        
-                        Cart is Empty  */}
-                          {getOrderItem.length && (
-                            <tbody>
-                              getOrderItem
-                              <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                  <strong>Total</strong>
-                                </td>
-                                <td className="text-right">
-                                  <strong>{this.totalPrice()} KWD</strong>
-                                </td>
-                              </tr>
-                            </tbody>
-                          )}
-                        </table>
+                        <div
+                          className="row d-flex pt-4"
+                          style={{ color: "#c5198c" }}
+                        >
+                          <div className="col-4">
+                            <strong>Total</strong>
+                          </div>
+                          <div className="col-4">
+                            <strong>{this.totalPrice()} KWD</strong>
+                          </div>
+                        </div>
                       </div>
                     </div>
+
                     <div className="col mb-2 mt-5">
                       <div className="row d-flex justify-content-end">
                         <div className="text-center">

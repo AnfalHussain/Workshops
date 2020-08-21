@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-
-import { faTrash } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 
 import { connect } from "react-redux";
 // import { Link, Redirect } from "react-router-dom";
@@ -12,18 +11,15 @@ class Card extends Component {
   };
   render() {
     return (
-      <tr>
-        <td>{this.props.orderItem.name}</td>
-        <td className="text-right">{this.props.orderItem.price}</td>
-        <td className="text-right">
-          <button
-            className="btn btn-sm btn-danger"
-            onClick={() => this.handleClick()}
-          >
-            <faTrash size={30} />
-          </button>
-        </td>
-      </tr>
+      <div className="row pt-3 pb-3">
+        <div className="col-4">{this.props.orderItem.name}</div>
+        <div className="col-4">{this.props.orderItem.price} KWD</div>
+        <div className="col-4">
+          <div className="d-flex justify-content-end">
+            <FaTrash onClick={() => this.handleClick()} size={20} />
+          </div>
+        </div>
+      </div>
     );
   }
 }

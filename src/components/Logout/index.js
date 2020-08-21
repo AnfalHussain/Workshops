@@ -8,13 +8,14 @@ class Logout extends Component {
   render() {
     const logout = () => {
       return (
-        <Link
+        <a
+          role="button"
           id="nav-link"
           onClick={this.props.logout}
           className="nav-link nav"
         >
           Logout
-        </Link>
+        </a>
       );
     };
 

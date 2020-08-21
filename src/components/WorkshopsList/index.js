@@ -9,6 +9,7 @@ const WorkshopsList = ({ workshops }) => {
   const WorkshopsCards = workshops.map((workshop, index) => (
     <WorkshopCard
       key={`${index}`}
+      id={workshop.id}
       name={workshop.name}
       description={workshop.description}
       price={workshop.price}
