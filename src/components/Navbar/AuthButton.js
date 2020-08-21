@@ -32,7 +32,6 @@ const AuthButton = ({ user, profile }) => {
       </>
     );
   }
-  console.log("user", user);
   return <ul className="navbar-nav ml-auto">{buttons}</ul>;
 };
 

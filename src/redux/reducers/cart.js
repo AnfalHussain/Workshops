@@ -1,9 +1,4 @@
-import {
-  ADD_TO_CART,
-  REMOVE_FROM_CART,
-  CHECKOUT,
-  SET_PROFILE,
-} from "../actions/types";
+import { ADD_TO_CART, REMOVE_FROM_CART, CHECKOUT } from "../actions/types";
 
 const initialState = {
   workshops: [],
@@ -36,7 +31,9 @@ const reducer = (state = initialState, action) => {
       };
 
     case CHECKOUT:
+      console.log("reducer CHECKOUT");
       return {
+        ...state,
         orders: state.orders.concat(action.payload),
         workshops: [],
       };

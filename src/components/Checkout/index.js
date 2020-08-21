@@ -15,10 +15,10 @@ class Checkout extends Component {
   };
 
   handleClick = () => {
-    let newOrders = {
-      order: this.props.workshops,
-    };
-    this.props.checkout(newOrders, this.props.history);
+    // let newOrders = {
+    //   carts: this.props.workshops,
+    // };
+    this.props.checkout({ carts: this.props.workshops }, this.props.history);
   };
 
   render() {
