@@ -18,64 +18,76 @@ class ShoppingCart extends Component {
 
     return (
       <>
-        <section id="overlay" className="single-section">
-          <h1 id="my-cart" className="mt-5">
-            My Cart
-          </h1>
-        </section>
-
-        <div className="container-fluid mb-4">
-          <div className="row">
-            <div className="col-12">
-              <div className="table-responsive">
-                <table className="table table-striped">
-                  <thead>
-                    <tr>
-                      <th scope="col"> </th>
-                      <th scope="col">Product</th>
-                      <th scope="col" className="text-center">
-                        Quantity
-                      </th>
-                      <th scope="col" className="text-right">
-                        Price
-                      </th>
-                      <th> </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {getOrderItem}
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>
-                        <strong>Total</strong>
-                      </td>
-                      <td className="text-right">
-                        <strong>{this.totalPrice()} KWD</strong>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+        <div className="container mt-5">
+          <div id="loginCard" className="card col-8 mx-auto  mt-5">
+            <div className="card-body">
+              <div className="text-center">
+                <h1 className="mt-5">My Cart</h1>
               </div>
-            </div>
-            <div className="col mb-2 mt-5">
-              <div className="row">
-                <div className="col-sm-12  col-md-6">
-                  <Link to="/home">
-                    <button className="btn btn-lg btn-secondary rounded-pill">
-                      Continue Shopping
-                    </button>
-                  </Link>
-                </div>
-                <div className="col-sm-12 col-md-6 text-right">
-                  <Link to="/checkout" params={{ total: this.totalPrice() }}>
-                    <button className="btn btn-lg btn-outline-success rounded-pill">
-                      Proceed to checkout
-                    </button>
-                  </Link>
-                </div>
+
+              <div className="container-fluid mb-4">
+                {getOrderItem.length ? (
+                  <div className="row">
+                    <div className="col-4">
+                      <strong> Product</strong>
+                    </div>
+                    <div className="col-4">
+                      {" "}
+                      <strong>Price </strong>
+                    </div>
+                    <div className="col-12">
+                      <div className="table-responsive">
+                        <table className="table table-striped">
+                          {/* <thead>
+                          <tr>
+                            <th scope="col"> </th>
+                            <th scope="col">Product</th>
+
+                            <th scope="col" className="text-right">
+                              Price
+                            </th>
+                            <th> </th>
+                          </tr>
+                        </thead>
+                        
+                        Cart is Empty  */}
+                          {getOrderItem.length && (
+                            <tbody>
+                              getOrderItem
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                  <strong>Total</strong>
+                                </td>
+                                <td className="text-right">
+                                  <strong>{this.totalPrice()} KWD</strong>
+                                </td>
+                              </tr>
+                            </tbody>
+                          )}
+                        </table>
+                      </div>
+                    </div>
+                    <div className="col mb-2 mt-5">
+                      <div className="row d-flex justify-content-end">
+                        <div className="text-center">
+                          <Link
+                            className="btn signup_btn"
+                            to="/checkout"
+                            params={{ total: this.totalPrice() }}
+                          >
+                            Proceed to checkout
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="text-center pt-5 pb-5"> Cart is Empty </div>
+                )}
               </div>
             </div>
           </div>

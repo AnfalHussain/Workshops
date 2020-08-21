@@ -9,6 +9,7 @@ import "./App.css";
 import List from "./components/WorkshopsList";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import Cart from "./components/Cart";
 import Profile from "./components/Profile";
 import EditProfile from "./components/EditProfile";
 import Navbar from "./components/Navbar";
@@ -20,8 +21,10 @@ const App = () => {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+        <Route path="/cart" component={Cart} />
         <Route path="/profile" component={Profile} />
         <Route path="/edit-profile" component={EditProfile} />
+
         <Route exact path="/" component={List} />
         <Redirect to="/" />
       </Switch>

@@ -10,7 +10,7 @@ class CartButton extends Component {
     const workshops = this.props.workshops;
     return (
       <li>
-        <Link to="/cart/">
+        <Link to="/cart">
           <NotificationBadge
             className="badge badge-pill badge-primary"
             style={{ transformY: 200 }}
