@@ -19,12 +19,24 @@ export const editProfile = (userData, history) => {
       let newUserDate = {
         user: {
           username: "",
-          email: userData.email,
         },
+        email: userData.email,
         phone: userData.phone,
         gender: userData.gender,
         age: userData.age,
-        image: userData.image,
+        first_name: userData.first_name,
+        middle_name: userData.middle_name,
+        last_name: userData.last_name,
+        gender: userData.gender,
+        nationality: userData.nationality,
+        mobile_number: userData.mobile_number,
+        secondary_contact_number: userData.secondary_contact_number,
+        civil_id_number: userData.civil_id_number,
+        governorate: userData.governorate,
+        area: userData.area,
+        education_level: userData.education_level,
+        major: userData.major,
+        age: userData.age,
       };
 
       const res = await instance.put("profile/", newUserDate);

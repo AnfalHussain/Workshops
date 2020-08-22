@@ -13,9 +13,10 @@ export const removeItem = (item) => ({
 
 export const checkout = (workshops, history) => async (dispatch) => {
   try {
-    console.log("workshops inside redux", history);
     const res = await instance.post("register/", workshops);
+
     dispatch({ type: CHECKOUT, payload: res.data });
+    console.log("res.data", res.data);
     if (history) {
       history.replace("/successful");
     }

@@ -20,7 +20,6 @@ class EditProfile extends Component {
     mobile_number: "",
     secondary_contact_number: "",
     civil_id_number: "",
-    birthdate: "",
     governorate: "",
     area: "",
     education_level: "",
@@ -40,7 +39,6 @@ class EditProfile extends Component {
         mobile_number: profile.mobile_number,
         secondary_contact_number: profile.secondary_contact_number,
         civil_id_number: profile.civil_id_number,
-        birthdate: profile.birthdate,
         governorate: profile.governorate,
         area: profile.area,
         education_level: profile.education_level,
@@ -177,7 +175,9 @@ class EditProfile extends Component {
                     value={genderOptions.find(
                       (option) => option.value === this.state.gender
                     )}
-                    placeholder={this.state.gender}
+                    placeholder={
+                      this.state.gender ? this.state.gender : "Choose Gender"
+                    }
                     options={genderOptions}
                     className="pb-3 f_size_14"
                     onChange={(option) => setGender(option)}
@@ -209,7 +209,10 @@ class EditProfile extends Component {
                   />
                 </div>
                 <div className="form-group">
-                  <label> Phone Number</label>
+                  <label>
+                    {" "}
+                    Phone Number <span>eg. +96599991111</span>
+                  </label>
 
                   <input
                     className="form-control"
@@ -235,7 +238,11 @@ class EditProfile extends Component {
 
                   <Select
                     styles={customStyles}
-                    placeholder={this.state.governorate}
+                    placeholder={
+                      this.state.governorate
+                        ? this.state.governorate
+                        : "Choose Governorate"
+                    }
                     value={governorateOptions.find(
                       (option) => option.value === this.state.governorate
                     )}
