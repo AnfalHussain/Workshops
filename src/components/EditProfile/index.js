@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Loading from "../Loading";
 import Select from "react-select";
 import customStyles from "./SelectStyle/customStyles";

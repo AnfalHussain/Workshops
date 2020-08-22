@@ -16,7 +16,6 @@ export const profile = () => async (dispatch) => {
 export const editProfile = (userData, history) => {
   return async (dispatch) => {
     try {
-      console.log("userData", userData);
       let newUserDate = {
         user: {
           username: "",
