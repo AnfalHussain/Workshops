@@ -258,7 +258,6 @@ class EditProfile extends Component {
                 </div>
                 <div className="form-group">
                   <label>Education Level</label>
-
                   <Select
                     styles={customStyles}
                     placeholder={
