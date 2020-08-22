@@ -5,9 +5,10 @@ import Select from "react-select";
 import customStyles from "./SelectStyle/customStyles";
 import governorateOptions from "./SelectOptions/governorate";
 import genderOptions from "./SelectOptions/gender";
+import educationOptions from "./SelectOptions/education";
 
 //Actions
-import { signup, resetErrors } from "../../redux/actions";
+import { editProfile, resetErrors } from "../../redux/actions";
 
 import { connect } from "react-redux";
 class EditProfile extends Component {
@@ -58,12 +59,9 @@ class EditProfile extends Component {
   submitHandler = (e) => {
     e.preventDefault();
 
-    this.props.signup(this.state, this.props.history);
+    this.props.editProfile(this.state, this.props.history);
   };
 
-  // handleChangeGovernorate = (event) =>  {
-  //     this.setState({value: event.target.value});
-  //   }
   render() {
     const setGovernorate = (option) => {
       this.setState({
@@ -73,6 +71,11 @@ class EditProfile extends Component {
     const setGender = (option) => {
       this.setState({
         gender: option.value,
+      });
+    };
+    const setEducation = (option) => {
+      this.setState({
+        education_level: option.value,
       });
     };
 
@@ -103,16 +106,6 @@ class EditProfile extends Component {
                   </div>
                 )}
 
-                {/* <div className="form-group">
-                  <label>Username</label>
-                  <input
-                    className="form-control"
-                    type="text"
-                    placeholder={profile.user.username}
-                    name="username"
-                    onChange={this.changeHandler}
-                  />
-                </div> */}
                 <div className="form-group">
                   <label>First Name</label>
 
@@ -179,7 +172,6 @@ class EditProfile extends Component {
                       this.state.gender ? this.state.gender : "Choose Gender"
                     }
                     options={genderOptions}
-                    className="pb-3 f_size_14"
                     onChange={(option) => setGender(option)}
                     components={{
                       IndicatorSeparator: () => null,
@@ -247,7 +239,6 @@ class EditProfile extends Component {
                       (option) => option.value === this.state.governorate
                     )}
                     options={governorateOptions}
-                    className="pb-3 f_size_14"
                     onChange={(option) => setGovernorate(option)}
                     components={{
                       IndicatorSeparator: () => null,
@@ -268,12 +259,21 @@ class EditProfile extends Component {
                 <div className="form-group">
                   <label>Education Level</label>
 
-                  <input
-                    className="form-control"
-                    type="text"
-                    placeholder={profile.education_level}
-                    name="education_level"
-                    onChange={this.changeHandler}
+                  <Select
+                    styles={customStyles}
+                    placeholder={
+                      this.state.education_level
+                        ? this.state.education_level
+                        : "Education Level"
+                    }
+                    value={educationOptions.find(
+                      (option) => option.value === this.state.education_level
+                    )}
+                    options={educationOptions}
+                    onChange={(option) => setEducation(option)}
+                    components={{
+                      IndicatorSeparator: () => null,
+                    }}
                   />
                 </div>
                 <div className="form-group">
@@ -311,7 +311,8 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => {
   return {
-    signup: (userData, history) => dispatch(signup(userData, history)),
+    editProfile: (userData, history) =>
+      dispatch(editProfile(userData, history)),
     resetErrors: () => dispatch(resetErrors()),
   };
 };

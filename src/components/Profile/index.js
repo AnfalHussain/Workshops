@@ -39,11 +39,6 @@ class Profile extends Component {
           </div>
 
           <div className=" row justify-content-center  mt-3 mb-5">
-            {/* <Link to="/registration-history">
-              <button className="btn signup_btn mr-5">
-                Registration History
-              </button>
-            </Link> */}
             <br />
             <Link to="/edit-profile">
               <button className="btn rounded-pill btn-outline-secondary">

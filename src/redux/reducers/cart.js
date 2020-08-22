@@ -37,13 +37,6 @@ const reducer = (state = initialState, action) => {
         orders: state.orders.concat(action.payload),
         workshops: [],
       };
-    // case SET_PROFILE:
-    //   const orders = action.payload;
-    //   return {
-    //     ...state,
-    //     orders: orders.order_history,
-    //     loading: false
-    //   };
 
     default:
       return {

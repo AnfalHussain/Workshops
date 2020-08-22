@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Switch, Route, Router, Redirect, withRouter } from "react-router-dom";
-// import { connect } from "react-redux";
 
 //Style
 import "./App.css";
@@ -29,7 +28,6 @@ const App = () => {
         <Route path="/successful" component={Success} />
         <Route path="/profile" component={Profile} />
         <Route path="/edit-profile" component={EditProfile} />
-
         <Route exact path="/" component={List} />
         <Redirect to="/" />
       </Switch>
@@ -38,6 +36,4 @@ const App = () => {
   );
 };
 
-// export default App;
-// export default withRouter(connect(null, mapDispatchToProps)(App));
 export default App;
