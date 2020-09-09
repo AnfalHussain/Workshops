@@ -36,20 +36,27 @@ class Checkout extends Component {
               <h1 className="mt-5">Registration Summary</h1>
             </div>
             <div className="row m-4">
-              Applicant Name:{" "}
-              <span>
-                {" "}
-                {`${profile.first_name} ${profile.middle_name} ${profile.last_name}`}
-              </span>
+              <strong> Applicant Name: </strong>{" "}
+              {profile.first_name ? (
+                <span>
+                  {" "}
+                  {`${profile.first_name} ${profile.middle_name} ${profile.last_name}`}
+                </span>
+              ) : (
+                "None name"
+              )}
             </div>
             <div className="row m-4">
-              Civil Id: <span> {profile.civil_id_number}</span>
+              <strong> Civil Id: </strong>
+              <span> {profile.civil_id_number}</span>
             </div>
             <div className="row m-4">
-              Mobile: <span>{profile.mobile_number}</span>{" "}
+              <strong> Mobile: </strong>
+              <span>{profile.mobile_number}</span>{" "}
             </div>
             <div className="row m-4">
-              Email:<span> {profile.email}</span>
+              <strong>Email:</strong>
+              <span> {profile.email}</span>
             </div>
             <div className="container-fluid mb-4 mt-4 pl-4 pr-4  ">
               <div className="row m-4">
