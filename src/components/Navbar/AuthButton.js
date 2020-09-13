@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Logout from "../Logout";
 import { RiAccountCircleFill } from "react-icons/ri";
 
-const AuthButton = ({ user, profile }) => {
+const AuthButton = ({ user }) => {
   let buttons = [
     <li key="loginButton" className="nav-item">
       <NavLink id="nav-link" to="/login" className="nav-link nav">
